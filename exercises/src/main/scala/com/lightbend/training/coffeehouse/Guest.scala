@@ -6,7 +6,8 @@ import scala.concurrent.duration.FiniteDuration
 
 class Guest(waiter: ActorRef,
             favouriteCoffee: Coffee,
-            finishCoffeeDuration: FiniteDuration)
+            finishCoffeeDuration: FiniteDuration,
+            caffeineLimit: Int)
     extends Actor
     with ActorLogging
     with Timers {
@@ -16,7 +17,6 @@ class Guest(waiter: ActorRef,
   private var coffeeCount: Int = 0
 
   orderCoffee()
-
 
   override def postStop(): Unit = {
     log.info("Goodbye")
@@ -33,6 +33,8 @@ class Guest(waiter: ActorRef,
         CoffeeFinished,
         finishCoffeeDuration
       )
+    case CoffeeFinished if coffeeCount > caffeineLimit =>
+      throw CaffeineException
     case CoffeeFinished => orderCoffee()
   }
 
@@ -44,9 +46,11 @@ class Guest(waiter: ActorRef,
 object Guest {
 
   case object CoffeeFinished
+  case object CaffeineException extends IllegalStateException
 
   def props(waiter: ActorRef,
             favCoffee: Coffee,
-            finishCoffeeDuration: FiniteDuration): Props =
-    Props(new Guest(waiter, favCoffee, finishCoffeeDuration))
+            finishCoffeeDuration: FiniteDuration,
+            caffeineLimit: Int): Props =
+    Props(new Guest(waiter, favCoffee, finishCoffeeDuration, caffeineLimit))
 }

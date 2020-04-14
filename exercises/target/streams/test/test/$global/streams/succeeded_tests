@@ -1,7 +1,7 @@
 #Successful Tests
-#Tue Apr 14 18:43:20 GMT 2020
-com.lightbend.training.coffeehouse.CoffeeHouseAppSpec=1586889800108
-com.lightbend.training.coffeehouse.WaiterSpec=1586889799949
-com.lightbend.training.coffeehouse.GuestSpec=1586889799808
-com.lightbend.training.coffeehouse.BaristaSpec=1586889800274
-com.lightbend.training.coffeehouse.CoffeeHouseSpec=1586889799446
+#Tue Apr 14 19:15:57 GMT 2020
+com.lightbend.training.coffeehouse.CoffeeHouseAppSpec=1586891757648
+com.lightbend.training.coffeehouse.WaiterSpec=1586891757444
+com.lightbend.training.coffeehouse.GuestSpec=1586891757309
+com.lightbend.training.coffeehouse.BaristaSpec=1586891757827
+com.lightbend.training.coffeehouse.CoffeeHouseSpec=1586891756841

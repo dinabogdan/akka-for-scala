@@ -2,7 +2,15 @@ package com.lightbend.training.coffeehouse
 
 import java.util.concurrent.TimeUnit
 
-import akka.actor.{Actor, ActorLogging, ActorRef, Props, Terminated}
+import akka.actor.{
+  Actor,
+  ActorLogging,
+  ActorRef,
+  OneForOneStrategy,
+  Props,
+  SupervisorStrategy,
+  Terminated
+}
 
 import scala.concurrent.duration._
 
@@ -11,6 +19,13 @@ class CoffeeHouse(caffeineLimit: Int) extends Actor with ActorLogging {
   import CoffeeHouse._
 
   log.debug("CoffeeHouse Open")
+
+  override def supervisorStrategy: SupervisorStrategy = {
+    val decider: SupervisorStrategy.Decider = {
+      case Guest.CaffeineException => SupervisorStrategy.Stop
+    }
+    OneForOneStrategy()(decider.orElse(super.supervisorStrategy.decider))
+  }
 
   private var guestBook: Map[ActorRef, Int] = Map.empty.withDefaultValue(0)
 
@@ -34,8 +49,8 @@ class CoffeeHouse(caffeineLimit: Int) extends Actor with ActorLogging {
   private val waiter = createWaiter()
 
   override def receive: Receive = {
-    case CreateGuest(favCoffee) =>
-      val guest = createGuest(favCoffee)
+    case CreateGuest(favCoffee, caffeineLimit) =>
+      val guest = createGuest(favCoffee, caffeineLimit)
       guestBook += guest -> 0
       log.info(s"Guest $guest added to guest book")
       context.watch(guest)
@@ -52,8 +67,11 @@ class CoffeeHouse(caffeineLimit: Int) extends Actor with ActorLogging {
     case _ => sender() ! "Coffee brewing"
   }
 
-  protected def createGuest(favCoffee: Coffee): ActorRef =
-    context.actorOf(Guest.props(waiter, favCoffee, finishCoffeeDuration))
+  protected def createGuest(favCoffee: Coffee,
+                            guestCaffeineLimit: Int): ActorRef =
+    context.actorOf(
+      Guest.props(waiter, favCoffee, finishCoffeeDuration, guestCaffeineLimit)
+    )
 
   protected def createBarista(): ActorRef = {
     context.actorOf(Barista.props(prepareCoffeeDuration), "barista")
@@ -66,7 +84,7 @@ class CoffeeHouse(caffeineLimit: Int) extends Actor with ActorLogging {
 object CoffeeHouse {
 
   case class ApproveCoffee(coffee: Coffee, guest: ActorRef)
-  case class CreateGuest(favCoffee: Coffee)
+  case class CreateGuest(favCoffee: Coffee, caffeineLimit: Int)
 
   def props(caffeineLimit: Int): Props = Props(new CoffeeHouse(caffeineLimit))
 }

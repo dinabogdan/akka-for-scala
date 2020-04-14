@@ -11,7 +11,7 @@ class GuestSpec extends BaseAkkaSpec {
 
   "Sending CoffeeServed to Guest" should {
     "result in increasing the coffeeCount and log a status message at info" in {
-      val guest = system.actorOf(Guest.props(system.deadLetters, Coffee.Akkaccino, 100 milliseconds))
+      val guest = system.actorOf(Guest.props(system.deadLetters, Coffee.Akkaccino, 100 milliseconds, Int.MaxValue))
       EventFilter.info(source = guest.path.toString, pattern = """.*[Ee]njoy.*1\.*""", occurrences = 1) intercept {
         guest ! Waiter.CoffeeServed(Coffee.Akkaccino)
       }
@@ -33,10 +33,16 @@ class GuestSpec extends BaseAkkaSpec {
       guest ! Guest.CoffeeFinished
       waiter.expectMsg(Waiter.ServeCoffee(Coffee.Akkaccino))
     }
+    "result in a CaffeineException if caffeineLimit exceeded" in {
+      val guest = system.actorOf(Guest.props(system.deadLetters, Coffee.Akkaccino, 100 millis, -1))
+      EventFilter[Guest.CaffeineException.type](occurrences = 1) intercept {
+        guest ! Guest.CoffeeFinished
+      }
+    }
   }
 
   def createGuest(waiter: TestProbe) = {
-    val guest = system.actorOf(Guest.props(waiter.ref, Coffee.Akkaccino, 100 milliseconds))
+    val guest = system.actorOf(Guest.props(waiter.ref, Coffee.Akkaccino, 100 milliseconds, Int.MaxValue))
     waiter.expectMsg(Waiter.ServeCoffee(Coffee.Akkaccino)) // Creating Guest immediately sends Waiter.ServeCoffee
     guest
   }

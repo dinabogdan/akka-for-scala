@@ -38,7 +38,7 @@ class CoffeeHouseAppSpec extends BaseAkkaSpec {
         createGuest(2, Coffee.Akkaccino, Int.MaxValue)
         override def createCoffeeHouse() = probe.ref
       }
-      probe.receiveN(2) shouldEqual List.fill(2)(CoffeeHouse.CreateGuest(Coffee.Akkaccino))
+      probe.receiveN(2) shouldEqual List.fill(2)(CoffeeHouse.CreateGuest(Coffee.Akkaccino, Int.MaxValue))
     }
   }
 }

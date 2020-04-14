@@ -79,7 +79,7 @@ class CoffeeHouseApp(system: ActorSystem) extends Terminal {
                             coffee: Coffee,
                             caffeineLimit: Int): Unit = {
     (1 to count).foreach { _ =>
-      coffeeHouse ! CoffeeHouse.CreateGuest(coffee)
+      coffeeHouse ! CoffeeHouse.CreateGuest(coffee, caffeineLimit)
     }
   }
 

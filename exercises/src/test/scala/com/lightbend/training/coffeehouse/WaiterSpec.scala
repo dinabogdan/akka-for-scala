@@ -9,13 +9,13 @@ import akka.testkit.TestProbe
 class WaiterSpec extends BaseAkkaSpec {
 
   "Sending ServeCoffee to Waiter" should {
-    "result in sending PrepareCoffee to Barista" in {
-      val barista = TestProbe()
+    "result in sending ApproveCoffee to CoffeeHouse" in {
+      val coffeeHouse = TestProbe()
       val guest = TestProbe()
       implicit val ref = guest.ref
-      val waiter = system.actorOf(Waiter.props(barista.ref))
+      val waiter = system.actorOf(Waiter.props(coffeeHouse.ref))
       waiter ! Waiter.ServeCoffee(Coffee.Akkaccino)
-      barista.expectMsg(Barista.PrepareCoffee(Coffee.Akkaccino, guest.ref))
+      coffeeHouse.expectMsg(CoffeeHouse.ApproveCoffee(Coffee.Akkaccino, guest.ref))
     }
   }
 }

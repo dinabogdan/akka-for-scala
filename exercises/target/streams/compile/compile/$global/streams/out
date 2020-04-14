@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0mC:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\exercises\src\main\scala\com\lightbend\training\coffeehouse\CoffeeHouse.scala:41:10: not found: value ApproveCoffe[0m
+[0m[[0m[31merror[0m] [0m[0m    case ApproveCoffe(coffee, guest) if guestBook(guest) < caffeineLimit =>[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\exercises\src\main\scala\com\lightbend\training\coffeehouse\CoffeeHouse.scala:45:10: not found: value ApproveCoffe[0m
+[0m[[0m[31merror[0m] [0m[0m    case ApproveCoffe(coffee, guest) =>[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

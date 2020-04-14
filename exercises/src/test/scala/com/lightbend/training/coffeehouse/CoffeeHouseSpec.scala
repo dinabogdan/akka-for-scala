@@ -14,6 +14,10 @@ class CoffeeHouseSpec extends BaseAkkaSpec {
         system.actorOf(CoffeeHouse.props)
       }
     }
+    "result in creating a child actor with the name 'barista'" in {
+      system.actorOf(CoffeeHouse.props, "create-barista")
+      TestProbe().expectActor("/user/create-barista/barista")
+    }
     "result in creating a child actor with the name 'waiter'" in {
       system.actorOf(CoffeeHouse.props, "create-waiter")
       TestProbe().expectActor("/user/create-waiter/waiter")

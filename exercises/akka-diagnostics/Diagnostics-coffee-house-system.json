@@ -1,0 +1,236 @@
+{
+  "start-time" : "2020-04-14T13:43:26.444",
+  "akka-version" : "2.6.3",
+  "akka-diagnostics-version" : "1.1.12",
+  "classpath" : "/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/job-2/target/3a5ad2a6/exercises_2.13-1.3.0.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/29b0fda3/common_2.13-1.3.0.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/1418c956/scala-library-2.13.1.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/b650b9cd/akka-actor_2.13-2.6.3.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/a8b341fe/config-1.4.0.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/cecd75f8/scala-java8-compat_2.13-0.9.0.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/3801c01e/akka-slf4j_2.13-2.6.3.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/b5a4b6d1/slf4j-api-1.7.30.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/7c4f3c47/logback-classic-1.2.3.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/86434440/logback-core-1.2.3.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/1c591dfd/scala-parser-combinators_2.13-1.1.2.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/e70d360c/akka-diagnostics_2.13-1.1.12.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/6c6c702c/commons-lang3-3.5.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/7832979b/cinnamon-akka_2.13-2.13.1.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/5336dd59/cinnamon-java-2.13.1.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/40a2e2da/cinnamon-core-java-2.13.1.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/a65b97ee/cinnamon-common-2.13.1.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/8637290f/cinnamon-scala_2.13-2.13.1.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/4dbf8530/cinnamon-core_2.13-2.13.1.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/8fc82389/cinnamon-jvm-metrics-producer-2.13.1.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/6c8821a8/cinnamon-prometheus-2.13.1.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/8d4e28b6/simpleclient-0.8.0.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/6eb75521/HdrHistogram-2.1.12.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/7c0c78cc/cinnamon-prometheus-httpserver-2.13.1.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/92f1e166/simpleclient_httpserver-0.8.0.jar:/C:/Users/bogdan.dina/AppData/Local/Temp/sbt_1f8ee698/target/011ed6de/simpleclient_common-0.8.0.jar:/C:/Users/bogdan.dina/.ivy2/cache/com.lightbend.cinnamon/cinnamon-agent/jars/cinnamon-agent-2.13.1.jar",
+  "configuration-warnings" : [
+    {
+      "checker-key" : "typo",
+      "message" : "akka.logger is not an Akka configuration setting. Did you mean one of 'akka.loggers', 'akka.actor.deployment./IO-DNS/inet-address.router', 'akka.actor.deployment./IO-DNS/async-dns.router'? Is it a typo or is it placed in the wrong section? Application specific properties should be placed outside the 'akka' config tree.",
+      "properties" : "akka.logger",
+      "defaults" : ""
+    }],
+  "system-metrics" : {
+    "heap-init" : 268435456,
+    "heap-max" : 477626368,
+    "heap-used" : 72774360,
+    "heap-committed" : 190316544,
+    "os-processors" : 4,
+    "mem-pool-0" : {
+      "name" : "Code Cache",
+      "type" : "Non-heap memory",
+      "init" : 2555904,
+      "max" : 251658240,
+      "used" : 8827904,
+      "committed" : 8912896
+    },
+    "mem-pool-1" : {
+      "name" : "Metaspace",
+      "type" : "Non-heap memory",
+      "init" : 0,
+      "max" : -1,
+      "used" : 28173264,
+      "committed" : 30064640
+    },
+    "mem-pool-2" : {
+      "name" : "Compressed Class Space",
+      "type" : "Non-heap memory",
+      "init" : 0,
+      "max" : 1073741824,
+      "used" : 3709080,
+      "committed" : 4112384
+    },
+    "mem-pool-3" : {
+      "name" : "PS Eden Space",
+      "type" : "Heap memory",
+      "init" : 67108864,
+      "max" : 156762112,
+      "used" : 65696088,
+      "committed" : 67108864
+    },
+    "mem-pool-4" : {
+      "name" : "PS Survivor Space",
+      "type" : "Heap memory",
+      "init" : 11010048,
+      "max" : 11010048,
+      "used" : 0,
+      "committed" : 11010048
+    },
+    "mem-pool-5" : {
+      "name" : "PS Old Gen",
+      "type" : "Heap memory",
+      "init" : 179306496,
+      "max" : 358088704,
+      "used" : 7078272,
+      "committed" : 112197632
+    }
+  },
+  "configuration" : {
+    "akka" : {
+        "actor" : {
+            "debug" : {
+                "lifecycle" : "on",
+                "unhandled" : "on"
+            }
+        },
+        "logger" : [
+            "akka.event.slf4j.Slf4jLogger"
+        ],
+        "logging-filter" : "akka.event.slf4j.Slf4jLoggingFilter",
+        "loglevel" : "DEBUG",
+        "version" : "2.6.3"
+    },
+    "awt" : {
+        "toolkit" : "sun.awt.windows.WToolkit"
+    },
+    "cinnamon" : {
+        "akka" : {
+            "actors" : {
+                "/user/*" : {
+                    "report-by" : "class"
+                }
+            },
+            "dispatchers" : {
+                "basic-information" : {
+                    "names" : [
+                        "*"
+                    ]
+                },
+                "time-information" : {
+                    "names" : [
+                        "*"
+                    ]
+                }
+            }
+        },
+        "prometheus" : {
+            "exporters" : [
+                "http-server"
+            ],
+            "http-server" : {
+                "host" : "0.0.0.0",
+                "port" : 9001
+            }
+        }
+    },
+    "excluded-sensitive-paths" : [
+        "user.home",
+        "user.dir",
+        "user.name"
+    ],
+    "file" : {
+        "encoding" : {
+            "pkg" : "sun.io"
+        },
+        "separator" : "\\"
+    },
+    "java" : {
+        "awt" : {
+            "graphicsenv" : "sun.awt.Win32GraphicsEnvironment",
+            "printerjob" : "sun.awt.windows.WPrinterJob"
+        },
+        "class" : {
+            "path" : "C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\job-2\\target\\3a5ad2a6\\exercises_2.13-1.3.0.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\29b0fda3\\common_2.13-1.3.0.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\1418c956\\scala-library-2.13.1.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\b650b9cd\\akka-actor_2.13-2.6.3.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\a8b341fe\\config-1.4.0.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\cecd75f8\\scala-java8-compat_2.13-0.9.0.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\3801c01e\\akka-slf4j_2.13-2.6.3.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\b5a4b6d1\\slf4j-api-1.7.30.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\7c4f3c47\\logback-classic-1.2.3.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\86434440\\logback-core-1.2.3.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\1c591dfd\\scala-parser-combinators_2.13-1.1.2.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\e70d360c\\akka-diagnostics_2.13-1.1.12.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\6c6c702c\\commons-lang3-3.5.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\7832979b\\cinnamon-akka_2.13-2.13.1.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\5336dd59\\cinnamon-java-2.13.1.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\40a2e2da\\cinnamon-core-java-2.13.1.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\a65b97ee\\cinnamon-common-2.13.1.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\8637290f\\cinnamon-scala_2.13-2.13.1.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\4dbf8530\\cinnamon-core_2.13-2.13.1.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\8fc82389\\cinnamon-jvm-metrics-producer-2.13.1.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\6c8821a8\\cinnamon-prometheus-2.13.1.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\8d4e28b6\\simpleclient-0.8.0.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\6eb75521\\HdrHistogram-2.1.12.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\7c0c78cc\\cinnamon-prometheus-httpserver-2.13.1.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\92f1e166\\simpleclient_httpserver-0.8.0.jar;C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\sbt_1f8ee698\\target\\011ed6de\\simpleclient_common-0.8.0.jar;C:\\Users\\bogdan.dina\\.ivy2\\cache\\com.lightbend.cinnamon\\cinnamon-agent\\jars\\cinnamon-agent-2.13.1.jar",
+            "version" : "52.0"
+        },
+        "endorsed" : {
+            "dirs" : "C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\lib\\endorsed"
+        },
+        "ext" : {
+            "dirs" : "C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\lib\\ext;C:\\Windows\\Sun\\Java\\lib\\ext"
+        },
+        "home" : "C:\\Program Files\\Java\\jdk1.8.0_172\\jre",
+        "io" : {
+            "tmpdir" : "C:\\Users\\BOGDAN~1.DIN\\AppData\\Local\\Temp\\"
+        },
+        "library" : {
+            "path" : "C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\bin;C:\\Windows\\Sun\\Java\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Users\\bogdan.dina\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\local\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\bogdan.dina\\bin;C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\bin;C:\\app\\OracleUser\\product\\12.1.0\\dbhome_1\\bin;C:\\app\\oracle\\product\\12.1.0\\dbhome_1\\bin;C:\\Program Files\\Haskell\\bin;C:\\Program Files\\Haskell Platform\\8.4.3\\lib\\extralibs\\bin;C:\\Program Files\\Haskell Platform\\8.4.3\\bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\DevTools\\Gradle\\gradle-4.7\\bin;C:\\Program Files\\Git\\cmd;C:\\HashiCorp\\Vagrant\\bin;C:\\Program Files\\Docker;C:\\Program Files\\dotnet;C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319;C:\\Program Files\\nodejs;C:\\ProgramData\\chocolatey\\bin;C:\\DevTools\\K8S;C:\\Program Files\\Java\\jdk1.8.0_172\\bin;C:\\DevTools\\protoc\\bin;C:\\DevTools\\kafka\\kafka_2.11-2.0.0\\bin\\windows;C:\\DevTools\\Maven\\apache-maven-3.6.0\\bin;C:\\Program Files\\Docker Toolbox;C:\\Android\\sdk-tools-windows-4333796\\tools;C:\\Program Files (x86)\\Yarn\\bin;C:\\Program Files\\OpenJDK\\jdk-13\\bin;C:\\DevTools\\GCP\\google-cloud-sdk\\bin;C:\\Program Files (x86)\\scala\\bin;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\DevTools\\sbt\\bin;C:\\DevTools\\sbt\\bin;C:\\Users\\bogdan.dina\\AppData\\Local\\Continuum\\anaconda3;C:\\Users\\bogdan.dina\\AppData\\Local\\Continuum\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\bogdan.dina\\AppData\\Local\\Continuum\\anaconda3\\Library\\usr\\bin;C:\\Users\\bogdan.dina\\AppData\\Local\\Continuum\\anaconda3\\Library\\bin;C:\\Users\\bogdan.dina\\AppData\\Local\\Continuum\\anaconda3\\Scripts;C:\\Users\\bogdan.dina\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\bogdan.dina\\AppData\\Local\\atom\\bin;C:\\Users\\bogdan.dina\\AppData\\Roaming\\npm;C:\\Users\\bogdan.dina\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\bogdan.dina\\.dotnet\\tools;C:\\Program Files\\Git\\usr\\bin\\vendor_perl;C:\\Program Files\\Git\\usr\\bin\\core_perl;."
+        },
+        "runtime" : {
+            "name" : "Java(TM) SE Runtime Environment",
+            "version" : "1.8.0_172-b11"
+        },
+        "specification" : {
+            "name" : "Java Platform API Specification",
+            "vendor" : "Oracle Corporation",
+            "version" : "1.8"
+        },
+        "vendor" : {
+            "url" : {
+                "bug" : "http://bugreport.sun.com/bugreport/"
+            }
+        },
+        "version" : "1.8.0_172",
+        "vm" : {
+            "info" : "mixed mode",
+            "name" : "Java HotSpot(TM) 64-Bit Server VM",
+            "specification" : {
+                "name" : "Java Virtual Machine Specification",
+                "vendor" : "Oracle Corporation",
+                "version" : "1.8"
+            },
+            "vendor" : "Oracle Corporation",
+            "version" : "25.172-b11"
+        }
+    },
+    "line" : {
+        "separator" : "\r\n"
+    },
+    "os" : {
+        "arch" : "amd64",
+        "name" : "Windows 10",
+        "version" : "10.0"
+    },
+    "path" : {
+        "separator" : ";"
+    },
+    "sun" : {
+        "arch" : {
+            "data" : {
+                "model" : "64"
+            }
+        },
+        "boot" : {
+            "class" : {
+                "path" : "C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\lib\\resources.jar;C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\lib\\rt.jar;C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\lib\\sunrsasign.jar;C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\lib\\jsse.jar;C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\lib\\jce.jar;C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\lib\\charsets.jar;C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\lib\\jfr.jar;C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\classes"
+            },
+            "library" : {
+                "path" : "C:\\Program Files\\Java\\jdk1.8.0_172\\jre\\bin"
+            }
+        },
+        "cpu" : {
+            "endian" : "little",
+            "isalist" : "amd64"
+        },
+        "desktop" : "windows",
+        "io" : {
+            "unicode" : {
+                "encoding" : "UnicodeLittle"
+            }
+        },
+        "java" : {
+            "command" : "com.lightbend.training.coffeehouse.CoffeeHouseApp",
+            "launcher" : "SUN_STANDARD"
+        },
+        "jnu" : {
+            "encoding" : "Cp1252"
+        },
+        "management" : {
+            "compiler" : "HotSpot 64-Bit Tiered Compilers"
+        },
+        "os" : {
+            "patch" : {
+                "level" : ""
+            }
+        }
+    },
+    "user" : {
+        "country" : "US",
+        "language" : "en",
+        "script" : "",
+        "timezone" : "Europe/Athens",
+        "variant" : ""
+    }
+}
+}
+

@@ -19,10 +19,17 @@ class GuestSpec extends BaseAkkaSpec {
     "result in sending ServeCoffee to Waiter after finishCoffeeDuration" in {
       val waiter = TestProbe()
       val guest = createGuest(waiter)
-      waiter.within(50 milliseconds, 200 milliseconds) { // The timer is not extremely accurate, relax the timing constraints.
+      waiter.within(50 milliseconds, 200 milliseconds) {
+        // The timer is not extremely accurate, relax the timing constraints.
         guest ! Waiter.CoffeeServed(Coffee.Akkaccino)
         waiter.expectMsg(Waiter.ServeCoffee(Coffee.Akkaccino))
       }
+    }
+    "result in sending Complaint to Waiter for a wrong coffee" in {
+      val waiter = TestProbe()
+      val guest = createGuest(waiter)
+      guest ! Waiter.CoffeeServed(Coffee.MochaPlay)
+      waiter.expectMsg(Waiter.Complaint(Coffee.Akkaccino))
     }
   }
 

@@ -4,10 +4,10 @@
 
 package com.lightbend.training.coffeehouse
 
-import akka.actor.{ActorRef, Props}
 import akka.testkit.{EventFilter, TestActorRef, TestProbe}
 
 import scala.concurrent.duration.DurationInt
+import akka.actor.{Actor, ActorRef, Props}
 
 class CoffeeHouseSpec extends BaseAkkaSpec {
 
@@ -55,7 +55,7 @@ class CoffeeHouseSpec extends BaseAkkaSpec {
       val dummyGuest = TestProbe().ref // Just there to get an ActorRef...
       val dummyWaiter = TestProbe()
       val coffeeHouse = TestActorRef(new CoffeeHouse(Int.MaxValue) {
-        override def createBarista(): ActorRef = context.actorOf(Barista.props(0.seconds), "barista")
+         override def createBarista(): ActorRef = context.actorOf(Barista.props(0.seconds, 100), "barista")
       })
       coffeeHouse.tell(CoffeeHouse.ApproveCoffee(Coffee.Akkaccino, dummyGuest),dummyWaiter.ref)
       dummyWaiter.expectMsg(Barista.CoffeePrepared(Coffee.Akkaccino, dummyGuest))
@@ -135,6 +135,23 @@ class CoffeeHouseSpec extends BaseAkkaSpec {
       barista.watch(guest)
       guest ! Waiter.CoffeeServed(Coffee.Akkaccino)
       barista.expectTerminated(guest)
+    }
+  }
+
+  "On failure of Waiter CoffeeHouse" should {
+    "restart it and resend PrepareCoffee to Barista" in {
+      val barista = TestProbe()
+      TestActorRef(new CoffeeHouse(Int.MaxValue) {
+        override def createBarista() = barista.ref
+        override def createWaiter() = context.actorOf(Props(new Actor {
+          override def receive = {
+            case _ => throw Waiter.FrustratedException(Coffee.Akkaccino, system.deadLetters)
+          }
+        }), "waiter")
+      }, "resend-prepare-coffee")
+      val waiter = TestProbe().expectActor("/user/resend-prepare-coffee/waiter")
+      waiter ! "blow-up"
+      barista.expectMsg(Barista.PrepareCoffee(Coffee.Akkaccino, system.deadLetters))
     }
   }
 }

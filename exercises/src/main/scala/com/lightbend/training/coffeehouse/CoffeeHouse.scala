@@ -23,11 +23,18 @@ class CoffeeHouse(caffeineLimit: Int) extends Actor with ActorLogging {
   override def supervisorStrategy: SupervisorStrategy = {
     val decider: SupervisorStrategy.Decider = {
       case Guest.CaffeineException => SupervisorStrategy.Stop
+      case Waiter.FrustratedException(coffee, guest) =>
+        barista.forward(Barista.PrepareCoffee(coffee, guest))
+        SupervisorStrategy.Restart
     }
     OneForOneStrategy()(decider.orElse(super.supervisorStrategy.decider))
   }
 
   private var guestBook: Map[ActorRef, Int] = Map.empty.withDefaultValue(0)
+  private val baristaAccuracy =
+    context.system.settings.config.getInt("coffee-house.barista.accuracy")
+  private val waiterMaxComplaintCount = context.system.settings.config
+    .getInt("coffee-house.waiter.max-complaint-count")
 
   private val finishCoffeeDuration: FiniteDuration =
     context.system.settings.config
@@ -74,11 +81,17 @@ class CoffeeHouse(caffeineLimit: Int) extends Actor with ActorLogging {
     )
 
   protected def createBarista(): ActorRef = {
-    context.actorOf(Barista.props(prepareCoffeeDuration), "barista")
+    context.actorOf(
+      Barista.props(prepareCoffeeDuration, baristaAccuracy),
+      "barista"
+    )
   }
 
   protected def createWaiter(): ActorRef =
-    context.actorOf(Waiter.props(self), "waiter")
+    context.actorOf(
+      Waiter.props(self, barista, waiterMaxComplaintCount),
+      "waiter"
+    )
 }
 
 object CoffeeHouse {

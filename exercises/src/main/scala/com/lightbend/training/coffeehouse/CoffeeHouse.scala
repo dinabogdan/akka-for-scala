@@ -2,7 +2,7 @@ package com.lightbend.training.coffeehouse
 
 import java.util.concurrent.TimeUnit
 
-import akka.actor.{Actor, ActorLogging, ActorRef, Props}
+import akka.actor.{Actor, ActorLogging, ActorRef, Props, Terminated}
 
 import scala.concurrent.duration._
 
@@ -38,6 +38,7 @@ class CoffeeHouse(caffeineLimit: Int) extends Actor with ActorLogging {
       val guest = createGuest(favCoffee)
       guestBook += guest -> 0
       log.info(s"Guest $guest added to guest book")
+      context.watch(guest)
     case ApproveCoffee(coffee, guest) if guestBook(guest) < caffeineLimit =>
       guestBook += guest -> (guestBook(guest) + 1)
       log.info(s"Guest $guest caffeine count incremented.")
@@ -45,6 +46,9 @@ class CoffeeHouse(caffeineLimit: Int) extends Actor with ActorLogging {
     case ApproveCoffee(coffee, guest) =>
       log.info(s"Sorry, $guest, but you have reached your limit.")
       context.stop(guest)
+    case Terminated(guest) =>
+      log.info(s"Thanks, $guest, for being our guest!")
+      guestBook -= guest
     case _ => sender() ! "Coffee brewing"
   }
 

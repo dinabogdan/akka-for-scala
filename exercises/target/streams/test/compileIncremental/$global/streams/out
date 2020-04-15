@@ -1,23 +1,33 @@
+[0m[[0m[0mdebug[0m] [0m[0mThe com.lightbend.training.coffeehouse.Barista$ has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(stash,[Default]), UsedName(timers,[Default]), UsedName(aroundPreRestart,[Default]), UsedName(preRestart,[Default]), UsedName(unstash,[Default]), UsedName(aroundPostStop,[Default]), UsedName(postStop,[Default]), UsedName(aroundReceive,[Default]), UsedName(clearStash,[Default]), UsedName(mailbox,[Default]), UsedName(Barista,[Default]), UsedName(prepend,[Default]), UsedName(unstashAll,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) com.lightbend.training.coffeehouse.Barista$: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) com.lightbend.training.coffeehouse.Barista$.[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of com.lightbend.training.coffeehouse.CoffeeHouseSpec: Set(UsedName(Barista,[Default]))[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of com.lightbend.training.coffeehouse.WaiterSpec: Set(UsedName(Barista,[Default]))[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of com.lightbend.training.coffeehouse.BaristaSpec: Set(UsedName(Barista,[Default]))[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
 [0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\exercises\src\test\scala\com\lightbend\training\coffeehouse\CoffeeHouseSpec.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\exercises\src\test\scala\com\lightbend\training\coffeehouse\BaristaSpec.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set(NamesChange(com.lightbend.training.coffeehouse.Barista$,ModifiedNames(changes = UsedName(stash,[Default]), UsedName(timers,[Default]), UsedName(aroundPreRestart,[Default]), UsedName(preRestart,[Default]), UsedName(unstash,[Default]), UsedName(aroundPostStop,[Default]), UsedName(postStop,[Default]), UsedName(aroundReceive,[Default]), UsedName(clearStash,[Default]), UsedName(mailbox,[Default]), UsedName(Barista,[Default]), UsedName(prepend,[Default]), UsedName(unstashAll,[Default]))))[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(com.lightbend.training.coffeehouse.CoffeeHouseSpec)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(com.lightbend.training.coffeehouse.BaristaSpec)[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(com.lightbend.training.coffeehouse.CoffeeHouseSpec)[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\exercises\src\test\scala\com\lightbend\training\coffeehouse\CoffeeHouseSpec.scala)[0m
-[0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to C:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\exercises\target\scala-2.13\test-classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0m	external source: Set(com.lightbend.training.coffeehouse.CoffeeHouseSpec, com.lightbend.training.coffeehouse.WaiterSpec, com.lightbend.training.coffeehouse.BaristaSpec)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(com.lightbend.training.coffeehouse.BaristaSpec, com.lightbend.training.coffeehouse.CoffeeHouseSpec, com.lightbend.training.coffeehouse.WaiterSpec)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\exercises\src\test\scala\com\lightbend\training\coffeehouse\BaristaSpec.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mRecompiling all 5 sources: invalidated sources (3) exceeded 50.0% of all sources[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 5 Scala sources to C:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\exercises\target\scala-2.13\test-classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.2.5:compile for Scala 2.13.1[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.2.5:compile for Scala 2.13.1[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 3a80a9ff for Scala compiler version 2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 60847e32 for Scala compiler version 2.13.1[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-unchecked[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-deprecation[0m
@@ -29,11 +39,5 @@
 [0m[[0m[0mdebug[0m] [0m[0m	C:\Program Files\Java\jdk1.8.0_172\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_172\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_172\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_172\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_172\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_172\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_172\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_172\jre\classes;C:\Users\bogdan.dina\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.1.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	C:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\exercises\target\scala-2.13\test-classes;C:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\exercises\target\scala-2.13\classes;C:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\common\target\scala-2.13\classes;C:\DevTools\workspace\akka-for-scala\LAS-P-lightbend-akka-for-scala-professional-v1\common\target\scala-2.13\test-classes;C:\Users\bogdan.dina\.ivy2\cache\com.typesafe.akka\akka-actor_2.13\jars\akka-actor_2.13-2.6.3.jar;C:\Users\bogdan.dina\.ivy2\cache\com.typesafe\config\bundles\config-1.4.0.jar;C:\Users\bogdan.dina\.ivy2\cache\org.scala-lang.modules\scala-java8-compat_2.13\jars\scala-java8-compat_2.13-0.9.0.jar;C:\Users\bogdan.dina\.ivy2\cache\com.typesafe.akka\akka-slf4j_2.13\jars\akka-slf4j_2.13-2.6.3.jar;C:\Users\bogdan.dina\.ivy2\cache\org.slf4j\slf4j-api\jars\slf4j-api-1.7.30.jar;C:\Users\bogdan.dina\.ivy2\cache\ch.qos.logback\logback-classic\jars\logback-classic-1.2.3.jar;C:\Users\bogdan.dina\.ivy2\cache\ch.qos.logback\logback-core\jars\logback-core-1.2.3.jar;C:\Users\bogdan.dina\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.13\bundles\scala-parser-combinators_2.13-1.1.2.jar;C:\Users\bogdan.dina\.ivy2\cache\com.lightbend.akka\akka-diagnostics_2.13\jars\akka-diagnostics_2.13-1.1.12.jar;C:\Users\bogdan.dina\.ivy2\cache\org.apache.commons\commons-lang3\jars\commons-lang3-3.5.jar;C:\Users\bogdan.dina\.ivy2\cache\com.lightbend.cinnamon\cinnamon-akka_2.13\jars\cinnamon-akka_2.13-2.13.1.jar;C:\Users\bogdan.dina\.ivy2\cache\com.lightbend.cinnamon\cinnamon-java\jars\cinnamon-java-2.13.1.jar;C:\Users\bogdan.dina\.ivy2\cache\com.lightbend.cinnamon\cinnamon-core-java\jars\cinnamon-core-java-2.13.1.jar;C:\Users\bogdan.dina\.ivy2\cache\com.lightbend.cinnamon\cinnamon-common\jars\cinnamon-common-2.13.1.jar;C:\Users\bogdan.dina\.ivy2\cache\com.lightbend.cinnamon\cinnamon-scala_2.13\jars\cinnamon-scala_2.13-2.13.1.jar;C:\Users\bogdan.dina\.ivy2\cache\com.lightbend.cinnamon\cinnamon-core_2.13\jars\cinnamon-core_2.13-2.13.1.jar;C:\Users\bogdan.dina\.ivy2\cache\com.lightbend.cinnamon\cinnamon-jvm-metrics-producer\jars\cinnamon-jvm-metrics-producer-2.13.1.jar;C:\Users\bogdan.dina\.ivy2\cache\com.lightbend.cinnamon\cinnamon-prometheus\jars\cinnamon-prometheus-2.13.1.jar;C:\Users\bogdan.dina\.ivy2\cache\io.prometheus\simpleclient\bundles\simpleclient-0.8.0.jar;C:\Users\bogdan.dina\.ivy2\cache\org.hdrhistogram\HdrHistogram\bundles\HdrHistogram-2.1.12.jar;C:\Users\bogdan.dina\.ivy2\cache\com.lightbend.cinnamon\cinnamon-prometheus-httpserver\jars\cinnamon-prometheus-httpserver-2.13.1.jar;C:\Users\bogdan.dina\.ivy2\cache\io.prometheus\simpleclient_httpserver\bundles\simpleclient_httpserver-0.8.0.jar;C:\Users\bogdan.dina\.ivy2\cache\io.prometheus\simpleclient_common\bundles\simpleclient_common-0.8.0.jar;C:\Users\bogdan.dina\.ivy2\cache\com.typesafe.akka\akka-testkit_2.13\jars\akka-testkit_2.13-2.6.3.jar;C:\Users\bogdan.dina\.ivy2\cache\org.scalatest\scalatest_2.13\bundles\scalatest_2.13-3.1.0.jar;C:\Users\bogdan.dina\.ivy2\cache\org.scalatest\scalatest-compatible\bundles\scalatest-compatible-3.1.0.jar;C:\Users\bogdan.dina\.ivy2\cache\org.scalactic\scalactic_2.13\bundles\scalactic_2.13-3.1.0.jar;C:\Users\bogdan.dina\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.13.1.jar;C:\Users\bogdan.dina\.ivy2\cache\org.scala-lang.modules\scala-xml_2.13\bundles\scala-xml_2.13-1.2.0.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 0.608649935 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 1.249162871 s[0m
 [0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
-[0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll newly invalidated classes after taking into account (previously) recompiled classes:Set()[0m
